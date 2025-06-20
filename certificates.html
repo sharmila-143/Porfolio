@@ -1,98 +1,128 @@
-<style>
-    body{
-        display: top flex;
-    flex-direction: column;
-   min-height: 100vh;
-  text-align: center;
-  background-color: aliceblue;
-  margin: 0;
-  font-family: Arial, sans-serif;
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
     }
-    header {
-  background-color: green;
-  color: white;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: space-between;
-  
-}
- .button1{
-    padding:8px,16px;
-    border:1px solid white;
-    color:green;
-    padding: 2px;
-    background-color: white;
-    text-decoration: none;
-}
-    h2{
-        font-size: 36px;
-        color:green;
 
+    html, body {
+      height: 100%;
+      margin: 0;
     }
-    .certificates{
-    background-color:white;
-    justify-content: center;
-    display: flex;
-    margin: 80px;
-  
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+      background-color: aliceblue;
+      font-family: Arial, sans-serif;
     }
-     #certificates{
-  padding: 7px;
-  flex-direction: coloumn;
-  display:block;
- width:fit-content;
-  background-color: green;
-  color: white;
- justify-content: centre;
-  text-decoration: none;
-  margin: 10px 0;
-  border-radius: 25px;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.3s;
-  border: none;
+
+    main {
+      flex: 1;
+    }
+
+    header {
+      background-color: green;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: white;
+    }
+
+    .button1 {
+      padding: 6px 12px;
+      border: 1px solid white;
+      color: green;
+      background-color: white;
+      text-decoration: none;
+      margin: 4px;
+      border-radius: 5px;
+    }
+
+    h2 {
+      font-size: 36px;
+      color: green;
+    }
+
+    .certificates {
+      background-color: white;
+      justify-content: center;
+      display: flex;
+      margin: 80px;
+    }
+
+    .certificates nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .certificate-link {
+      padding: 7px 20px;
+      background-color: green;
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+      border: none;
+      width: fit-content;
+    }
+
+    .certificate-link:hover {
+      background-color: darkgreen;
+      transform: scale(1.05);
     }
 
     footer {
-   
-  background-color: green;
-  color: white;
-  padding: 20px;
-  justify-content: end;
-    
- 
-}
+      background-color: green;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Welcome to My Portfolio</h1>
+      <nav>
+        <strong>
+          <a href="index.html" class="button1">Home</a>
+          <a href="skills.html" class="button1">Skills</a>
+          <a href="projects.html" class="button1">Projects</a>
+          <a href="contact.html" class="button1">Contact</a>
+        </strong>
+      </nav>
+    </header>
 
-    
-</style>
-<html>
-     <main>
-        <header>
-        <h1>Welcome to My Potfolio</h1>
-    <nav >
-        
-          <strong> <a href="index.html"  type="button" class="button1" >Home</a>
-            <a href="skills.html"type="button" class="button1" >Skills</a>
-            <a href="projects.html"type="button" class="button1">Projects</a>
-            <a href="contact.html"type="button" class="button1">Contact</a>
-          </strong>
-    </nav>
-</header>
-        <section class="certificates">
-       <nav >
+    <section class="certificates">
+      <nav>
         <h2>Certificates</h2>
-        
-        <a href="python.pdf" id="certificates" type="button">Python</a>
-        <a href="webdevelop.pdf" id="certificates" type="button">webdevolopment</a>
-        <a href="css&js.jpg" id="certificates" type="button">CSS & JS</a>
-        <a href="ml.pdf" id="certificates" type="button">Machine learning</a>
-        <a href="workshop.pdf" id="certificates" type="button">AI chatbot</a>
-        <a href="intrenship.pdf" id="certificates" type="button">Intrenship</a>
-        
-       </nav>
-        </section>
-        <footer>
-    <b>&copy;2024 MyWebsite.All rights reserved.</b>
-   </footer>
+        <a href="python.pdf" class="certificate-link" type="button">Python</a>
+        <a href="webdevelop.pdf" class="certificate-link" type="button">Web Development</a>
+        <a href="css&js.jpg" class="certificate-link" type="button">CSS & JS</a>
+        <a href="ml.pdf" class="certificate-link" type="button">Machine Learning</a>
+        <a href="workshop.pdf" class="certificate-link" type="button">AI Chatbot</a>
+        <a href="intrenship.pdf" class="certificate-link" type="button">Internship</a>
+      </nav>
+    </section>
+  </main>
 
-    </main>
+  <footer>
+    <b>&copy; 2024 MyWebsite. All rights reserved.</b>
+  </footer>
+</body>
 </html>
