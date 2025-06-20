@@ -1,117 +1,155 @@
-<style>
-
-body{
-        display: top flex;
-    flex-direction: column;
-   min-height: 100vh;
-  text-align: center;
-  background-color: aliceblue;
-  margin: 0;
-  font-family: Arial, sans-serif;
-    }
-    header {
-  background-color: green;
-  color: white;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: space-between;
-  
-}
-
- .button1{
-    padding:8px,16px;
-    border:1px solid white;
-    color:green;
-    padding: 2px;
-    background-color: white;
-    text-decoration: none;
-}
-    h2{
-        font-size: 36px;
-        padding:0 0 20px 0;
-        color:green;
-        margin:0;
-    }
-   
-    .contact{
-        color: green;
-        padding:20px 60px;
-        width: fit-content;
-        border:2px solid green;
-        text-align:center;
-        align-items: center;
-        margin:5% 5% 5% 30%;    
-    }
-    div{
-        padding: 5px;
-    }
-    form b,label{
-        padding:5px;
-        
-    }
-    #submit{
-        background-color: green;
-        color: white;
-        padding: 15px;
-        margin-top: 20px;
-        text-decoration: none;
-        border-radius: 25px;
-    }
-    #submit:hover{
-        background-color: rgb(74, 121, 4);
-        transition-duration: 1.05;
-    }
-    footer {
-   margin-top: 7%;
-  background-color: green;
-  color: white;
-  padding: 20px;
-  justify-content: end;
-    
- 
-}
-    
-   
-    
-</style>
+<!DOCTYPE html>
 <html>
-    <main>
-        <header>
-        <h1>Welcome to My Potfolio</h1>
-    <nav >
-          <strong> <a href="index.html"  type="button" class="button1" >Home</a>
-            <a href="About.html"type="button" class="button1">About</a>
-            <a href="skills.html"type="button" class="button1" >Skills</a>
-            <a href="projects.html"type="button" class="button1">Projects</a>
-            
-          </strong>
-    </nav>
-</header>
-        <section class="contact">
-            <h2>contact Me</h2>
-            <form action="" id="connect" action="https://formsubmit.co/sharmilainkoolu@gmail.com" method="POST">
-                <input type="hidden" name="_captcha" value="false">
-                <div><label for="name" >Name:</label>
-                <input type="text" placeholder="Enter your name"></div>
-                <div><label for="email"style="margin-top:5px;margin-bottom:5px;">Email:</label> 
-                <input type="email" placeholder="Enter your Email"></div>
-                <div><b>Gender:</b>
-                <input type="radio" id="male" value="male">
-                <label for="male">male</label>
-                <input type="radio" id="female" value="female">
-                <label for="female">female</label>
-                </div>
-                <div>
-                <label for="bio">Message:</label>
-                <input type="text">
-                </div>
-                <input type="submit" value="Submit" id="submit"  >
-            </form>
-        </section>
-     <footer>
-    <b>&copy;2024 MyWebsite.All rights reserved.</b>
-   </footer>
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    </main>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+      background-color: aliceblue;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    header {
+      background-color: green;
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: white;
+    }
+
+    .button1 {
+      padding: 6px 12px;
+      border: 1px solid white;
+      color: green;
+      background-color: white;
+      text-decoration: none;
+      margin: 4px;
+      border-radius: 5px;
+    }
+
+    h2 {
+      font-size: 36px;
+      padding-bottom: 20px;
+      color: green;
+      margin: 0;
+    }
+
+    .contact {
+      color: green;
+      padding: 20px 60px;
+      width: fit-content;
+      border: 2px solid green;
+      text-align: center;
+      align-items: center;
+      margin: 5% auto;
+    
+    }
+
+    #submit {
+      background-color: green;
+      color: white;
+      padding: 15px 30px;
+      margin-top: 20px;
+      text-decoration: none;
+      border-radius: 25px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #submit:hover {
+      background-color: rgb(74, 121, 4);
+      transition-duration: 0.3s;
+    }
+
+    footer {
+      background-color: green;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Welcome to My Portfolio</h1>
+      <nav>
+        <strong>
+          <a href="index.html" class="button1">Home</a>
+          <a href="About.html" class="button1">About</a>
+          <a href="skills.html" class="button1">Skills</a>
+          <a href="projects.html" class="button1">Projects</a>
+        </strong>
+      </nav>
+    </header>
+
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <form id="myForm" action="https://formsubmit.co/sharmilainkoolu@gmail.com" method="POST">
+        <div><label>Name:<input type="text" placeholder="Your name" required></label></div>
+        <div style="margin-top: 5px;"><label>Email:<input type="email" name="email" placeholder="Your Email" required></label></div>
+        <label for="messageBox" style="display: block; font-weight: bold; margin-bottom: 5px;">Message:</label>
+        <textarea id="messageBox" name="message" placeholder="Your message" rows="4" cols="40"
+          style="display: block; padding: 8px; border: 1px solid green; border-radius: 5px; resize: vertical; font-family: Arial; font-size: 14px;">
+        </textarea>
+
+        <div style="margin-top: 10px;">
+          <label><input type="radio" name="gender" value="female" required> Female</label>
+          <label><input type="radio" name="gender" value="male"> Male</label>
+          <label><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+
+        <input type="submit" id="submit" value="Submit">
+      </form>
+
+      <p id="message" style="display:none; color: green;">✅ Form submitted!</p>
+      
+
+      <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // prevent real form submission for now
+      
+      // Submit manually via fetch (optional advanced), or:
+      this.submit(); // let it send to FormSubmit
+
+      // Show success message
+      document.getElementById("successMsg").style.display = "block";
+
+      // Refresh the page after 3 seconds
+      setTimeout(function() {
+        window.location.reload();
+      }, 3000);
+    });
+  </script>
+
+    </section>
+  </main>
+
+  <footer>
+    <b>&copy; 2024 MyWebsite. All rights reserved.</b>
+  </footer>
+</body>
 </html>
-   
+
