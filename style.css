@@ -1,0 +1,103 @@
+body {
+    display: top flex;
+    flex-direction: column;
+   min-height: 100vh;
+  text-align: center;
+  background-color: aliceblue;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: green;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+ .button1{
+    padding:8px,16px;
+    border:1px solid white;
+    color:green;
+    padding: 2px;
+    background-color: white;
+    text-decoration: none;
+}
+section{
+  margin-top: 50px;
+}
+
+.container {
+  
+  display: auto;
+
+  background-color: aliceblue;
+  max-width: 600px;
+  max-height: 90%;
+  margin: auto;
+
+}
+
+/* Profile image */
+#pimage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid green;
+}
+
+.button,.intro {
+  padding: 7px 13px;
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  border-radius: 25px;
+  display: inline-block;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+  border: none;
+}
+
+.button:hover,.intro:hover {
+  background-color: darkgreen;
+  color: lightgreen;
+  transform: scale(1.05);
+}
+
+
+.social-icons {
+  margin-top: 10px;
+  gap:40px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+
+footer {
+  margin-top: 3%;
+  background-color: green;
+  color: white;
+  padding: 10px;
+  justify-content: end;
+    
+ 
+}
+
+

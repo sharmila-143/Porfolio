@@ -1,0 +1,98 @@
+<style>
+    body{
+        display: top flex;
+    flex-direction: column;
+   min-height: 100vh;
+  text-align: center;
+  background-color: aliceblue;
+  margin: 0;
+  font-family: Arial, sans-serif;
+    }
+    header {
+  background-color: green;
+  color: white;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+ .button1{
+    padding:8px,16px;
+    border:1px solid white;
+    color:green;
+    padding: 2px;
+    background-color: white;
+    text-decoration: none;
+}
+    h2{
+        font-size: 36px;
+        color:green;
+
+    }
+    .certificates{
+    background-color:white;
+    justify-content: center;
+    display: flex;
+    margin: 80px;
+  
+    }
+     #certificates{
+  padding: 7px;
+  flex-direction: coloumn;
+  display:block;
+ width:fit-content;
+  background-color: green;
+  color: white;
+ justify-content: centre;
+  text-decoration: none;
+  margin: 10px 0;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+  border: none;
+    }
+
+    footer {
+   
+  background-color: green;
+  color: white;
+  padding: 20px;
+  justify-content: end;
+    
+ 
+}
+
+    
+</style>
+<html>
+     <main>
+        <header>
+        <h1>Welcome to My Potfolio</h1>
+    <nav >
+        
+          <strong> <a href="index.html"  type="button" class="button1" >Home</a>
+            <a href="skills.html"type="button" class="button1" >Skills</a>
+            <a href="projects.html"type="button" class="button1">Projects</a>
+            <a href="contact.html"type="button" class="button1">Contact</a>
+          </strong>
+    </nav>
+</header>
+        <section class="certificates">
+       <nav >
+        <h2>Certificates</h2>
+        
+        <a href="python.pdf" id="certificates" type="button">Python</a>
+        <a href="webdevelop.pdf" id="certificates" type="button">webdevolopment</a>
+        <a href="css&js.jpg" id="certificates" type="button">CSS & JS</a>
+        <a href="ml.pdf" id="certificates" type="button">Machine learning</a>
+        <a href="workshop.pdf" id="certificates" type="button">AI chatbot</a>
+        <a href="intrenship.pdf" id="certificates" type="button">Intrenship</a>
+        
+       </nav>
+        </section>
+        <footer>
+    <b>&copy;2024 MyWebsite.All rights reserved.</b>
+   </footer>
+
+    </main>
+</html>
