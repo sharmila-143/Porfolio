@@ -17,12 +17,14 @@ header {
   
 }
  .button1{
-    padding:8px,16px;
-    border:1px solid white;
-    color:green;
-    padding: 2px;
-    background-color: white;
-    text-decoration: none;
+     padding: 6px 12px;
+      border: 1px solid white;
+      color: green;
+      background-color: white;
+      text-decoration: none;
+      margin: 4px;
+      border-radius: 5px;
+   
 }
 section{
   margin-top: 50px;
