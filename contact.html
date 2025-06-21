@@ -9,102 +9,91 @@
     html, body {
       height: 100%;
       margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: aliceblue;
+      display: flex;
+      flex-direction: column;
     }
 
     body {
-      display: flex;
-      flex-direction: column;
       min-height: 100vh;
-      text-align: center;
-      background-color: aliceblue;
-      font-family: Arial, sans-serif;
-    }
-
-    main {
-      flex: 1;
     }
 
     header {
       background-color: green;
       color: white;
-      padding: 30px;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .container {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
+      align-items: center;
     }
 
-    h1 {
-      font-size: 36px;
-      color: white;
+    h1.logo {
+      font-size: 24px;
+      margin: 0;
+      border-right: 2px solid white;
+      white-space: nowrap;
+      overflow: hidden;
     }
+
     .hamburger {
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  display: none;
-  user-select: none;
-  background: none;
-  border: none;
-  padding:30px;
-}
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+      display: none;
+    }
 
-/* Navbar (Desktop Default) */
-.navbar {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.3s;
-}
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
 
-.navbar a:hover {
-  background-color: darkgreen;
-  border-radius: 5px;
-  transform: scale(1.05);
-}
-.logo {
-  font-size: 24px;
-  color: white;
-  background-color: green;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid white;
-}
+    .navbar a:hover {
+      background-color: darkgreen;
+      border-radius: 5px;
+      transform: scale(1.05);
+    }
 
-
-    
+    main {
+      flex: 1;
+      margin-top: 160px; /* Add top margin to prevent content hiding behind header */
+      text-align: center;
+      padding: 20px;
+    }
 
     h2 {
       font-size: 36px;
-      padding-bottom: 20px;
       color: green;
-      margin: 0;
+      margin-bottom: 20px;
     }
 
     .contact {
       color: green;
-      diplay:flex;
-      padding: 20px;
+      padding: 20px 60px;
       width: fit-content;
       border: 2px solid green;
-      text-align: center;
-      align-items: center;
-      margin: 5% auto;
-      flex:wrap;
-     
-      
-      
+      margin: 0 auto;
     }
-    @media(max-width:600px){
-      .contact{
-        flex-direction:column;
-      }
 
     #submit {
       background-color: green;
@@ -128,41 +117,41 @@
       color: white;
       padding: 20px;
       text-align: center;
+      margin-top: auto;
     }
+
     @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    background-color: green;
-  }
+      .hamburger {
+        display: block;
+      }
 
-  .navbar {
-    display: none;
-    flex-direction: column;
-    background-color: green;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    z-index: 999;
-  }
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: green;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
 
-  .navbar.active {
-    display: flex;
-  }
+      .navbar.active {
+        display: flex;
+      }
 
-  .navbar a {
-    padding: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-  }
-}
+      .navbar a {
+        padding: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <div class="container">
-      <h1 class="logo"  id="typewriter"></h1>
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <!-- Fixed Header -->
+  <header>
+    <div class="container">
+      <h1 class="logo" id="typewriter"></h1>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
     </div>
     <nav class="navbar" id="navbar">
       <a href="index.html">Home</a>
@@ -171,18 +160,17 @@
       <a href="skills.html">Skills</a>
       <a href="contact.html">Contact</a>
     </nav>
-     
-    </header>
+  </header>
 
+  <!-- Main Content -->
+  <main>
     <section class="contact">
       <h2>Contact Me</h2>
-      <form id="myForm" action="https://formsubmit.co/sharmilainkoolu@gmail.com" method="POST">
-        <div><label>Name:<input type="text" placeholder="Your name" required></label></div>
-        <div style="margin-top: 5px;"><label>Email:<input type="email" name="email" placeholder="Your Email" required></label></div>
-        <label for="messageBox" style="display: block; font-weight: bold; margin-bottom: 5px;">Message:</label>
-        <textarea id="messageBox" name="message" placeholder="Your message" rows="4" cols="40"
-          style="display: block; padding: 8px; border: 1px solid green; border-radius: 5px; resize: vertical; font-family: Arial; font-size: 14px;">
-        </textarea>
+      <form action="https://formsubmit.co/sharmilainkoolu@gmail.com" method="POST">
+        <div><label>Name: <input type="text" placeholder="Your name" required></label></div>
+        <div style="margin-top: 5px;"><label>Email: <input type="email" name="email" placeholder="Your Email" required></label></div>
+        <label for="messageBox" style="display:block; font-weight:bold; margin-bottom:5px;">Message:</label>
+        <textarea id="messageBox" name="message" placeholder="Your message" rows="4" cols="40" style="display: block; padding: 8px; border: 1px solid green; border-radius: 5px;"></textarea>
 
         <div style="margin-top: 10px;">
           <label><input type="radio" name="gender" value="female" required> Female</label>
@@ -192,54 +180,32 @@
 
         <input type="submit" id="submit" value="Submit">
       </form>
-
-      <p id="message" style="display:none; color: green;">✅ Form submitted!</p>
-      
-
-      <script>
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // prevent real form submission for now
-      
-      // Submit manually via fetch (optional advanced), or:
-      this.submit(); // let it send to FormSubmit
-
-      // Show success message
-      document.getElementById("successMsg").style.display = "block";
-
-      // Refresh the page after 3 seconds
-      setTimeout(function() {
-        window.location.reload();
-      }, 3000);
-    });
-        
-    const text = "👩‍🎓 contact👩‍🎓";
-    let index = 0;
-
-  function typeWriter() {
-    if (index < text.length) {
-      document.getElementById("typewriter").textContent += text.charAt(index);
-      index++;
-      setTimeout(typeWriter, 75); 
-    }
-  }
-
-  window.onload = typeWriter;
-
-  function toggleMenu() {
-    const nav = document.getElementById("navbar");
-    nav.classList.toggle("active");
-  }
-
-
-
-  </script>
-
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <b>&copy; 2024 MyWebsite. All rights reserved.</b>
   </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const text = "👩‍🎓 Contact👩‍🎓";
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        document.getElementById("typewriter").textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 75);
+      }
+    }
+
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
-
