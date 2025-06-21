@@ -1,49 +1,87 @@
- body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      text-align: center;
-      background-color: aliceblue;
-      font-family: Arial, sans-serif;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    header {
-      background-color: green;
-      color: white;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
- .button1{
-    padding: 6px 12px;
-      border: 1px solid white;
-      color: green;
-      background-color: white;
-      text-decoration: none;
-      margin: 4px;
-      border-radius: 5px;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  background-color: aliceblue;
+  font-family: Arial, sans-serif;
 }
-section{
+
+main {
+  flex: 1;
+}
+
+header {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  color: white;
+  margin: 0;
+}
+
+/* Hamburger */
+.hamburger {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+  background: none;
+  border: none;
+  padding:30px;
+}
+
+/* Navbar (Desktop Default) */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.navbar a:hover {
+  background-color: darkgreen;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+.logo {
+  font-size: 24px;
+  color: white;
+  background-color: green;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+}
+
+h1{
+  background-color: green;
+}
+section {
   margin-top: 50px;
 }
 
 .container {
-  
-  display: auto;
-
   background-color: aliceblue;
   max-width: 600px;
   max-height: 90%;
   margin: auto;
-
 }
 
-/* Profile image */
 #pimage {
   width: 200px;
   height: 200px;
@@ -52,7 +90,7 @@ section{
   border: 4px solid green;
 }
 
-.button,.intro {
+.button, .intro {
   padding: 7px 13px;
   background-color: green;
   color: white;
@@ -65,52 +103,18 @@ section{
   border: none;
 }
 
-.button:hover,.intro:hover {
+.button:hover, .intro:hover {
   background-color: darkgreen;
   color: lightgreen;
   transform: scale(1.05);
 }
 
-
 .social-icons {
   margin-top: 10px;
-  gap:40px;
+  gap: 40px;
   flex-wrap: wrap;
   display: flex;
   justify-content: center;
-
-
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  .button1 {
-    display: inline-block;
-    margin: 5px 8px;
-  }
-
-  .container {
-    padding: 0 10px;
-  }
-
-  #pimage {
-    width: 150px;
-    height: 150px;
-  }
-
-  footer {
-    font-size: 14px;
-    text-align: center;
-  }
 }
 
 .social-icons img {
@@ -124,15 +128,40 @@ section{
   transform: scale(1.1);
 }
 
-
 footer {
   margin-top: 3%;
   background-color: green;
   color: white;
   padding: 10px;
-  justify-content: end;
-    
- 
+  text-align: center;
 }
 
 
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    background-color: green;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background-color: green;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
