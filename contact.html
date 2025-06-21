@@ -27,7 +27,7 @@
     header {
       background-color: green;
       color: white;
-      padding: 40px 20px;
+      padding: 30px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -37,16 +37,48 @@
       font-size: 36px;
       color: white;
     }
+    .hamburger {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+  background: none;
+  border: none;
+  padding:30px;
+}
 
-    .button1 {
-      padding: 6px 12px;
-      border: 1px solid white;
-      color: green;
-      background-color: white;
-      text-decoration: none;
-      margin: 4px;
-      border-radius: 5px;
-    }
+/* Navbar (Desktop Default) */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.navbar a:hover {
+  background-color: darkgreen;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+.logo {
+  font-size: 24px;
+  color: white;
+  background-color: green;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+}
+
+
+    
 
     h2 {
       font-size: 36px;
@@ -57,14 +89,22 @@
 
     .contact {
       color: green;
-      padding: 20px 60px;
+      diplay:flex;
+      padding: 20px;
       width: fit-content;
       border: 2px solid green;
       text-align: center;
       align-items: center;
       margin: 5% auto;
-    
+      flex:wrap;
+     flex:1 1 200px;
+      
+      
     }
+    @media(max-width:600px){
+      .contact{
+        flex-direction:column;
+      }
 
     #submit {
       background-color: green;
@@ -89,20 +129,38 @@
       padding: 20px;
       text-align: center;
     }
+    @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    background-color: green;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background-color: green;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
   </style>
 </head>
 <body>
   <main>
     <header>
-      <h1>Welcome to My Portfolio</h1>
-      <nav>
-        <strong>
-          <a href="index.html" class="button1">Home</a>
-          <a href="about.html" class="button1">About</a>
-          <a href="skills.html" class="button1">Skills</a>
-          <a href="projects.html" class="button1">Projects</a>
-        </strong>
-      </nav>
+     
     </header>
 
     <section class="contact">
@@ -142,6 +200,27 @@
         window.location.reload();
       }, 3000);
     });
+        
+    const text = "👩‍🎓 Welcome to My Portfolio!👩‍🎓";
+    let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("typewriter").textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 75); 
+    }
+  }
+
+  window.onload = typeWriter;
+
+  function toggleMenu() {
+    const nav = document.getElementById("navbar");
+    nav.classList.toggle("active");
+  }
+
+
+
   </script>
 
     </section>
