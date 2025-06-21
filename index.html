@@ -8,20 +8,24 @@
 
  </head> 
  <body>
- <header>
-        <h1>Welcome to My Potfolio</h1>
-    <nav >
-          <strong> <a href="about.html"   type="button" class="button1" >About</a>
-            <a href="skills.html"type="button" class="button1" >Skills</a>
-            <a href="projects.html"type="button" class="button1">Projects</a>
-            <a href="contact.html"type="button" class="button1">Contact</a>
-          </strong>
+    <header class="header">
+    <div class="container">
+      <h1 class="logo"  id="typewriter"></h1>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+    <nav class="navbar" id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
     </nav>
-</header>
+  </header>
+
    <section>
     <div class="container">
         <img src="profile.jpg" alt="profile picture of Inkoolu Sharmila" id="pimage">
-        <h1>Inkoolu Sharmila</h1>
+        <h2>Inkoolu Sharmila</h2>
         <h3>welcome to my portfolio</h3>
     
       <a href="Resume.pdf" download class="intro"> Resume </a>
@@ -37,6 +41,27 @@
    <footer>
     <p>&copy;2024 MyWebsite.All rights reserved.</p>
    </footer>
+   <script>
+    const text = "👩‍🎓 Welcome to My Portfolio!👩‍🎓";
+    let index = 0;
+
+  function typeWriter() {
+    if (index < text.length) {
+      document.getElementById("typewriter").textContent += text.charAt(index);
+      index++;
+      setTimeout(typeWriter, 75); 
+    }
+  }
+
+  window.onload = typeWriter;
+
+  function toggleMenu() {
+    const nav = document.getElementById("navbar");
+    nav.classList.toggle("active");
+  }
+
+</script>
+
   </body>
 </html>
 
