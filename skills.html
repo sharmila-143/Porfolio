@@ -2,6 +2,7 @@
 <html>
 <head>
   <style>
+  
     * {
       box-sizing: border-box;
     }
@@ -9,75 +10,140 @@
     html, body {
       height: 100%;
       margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: aliceblue;
     }
 
     body {
       display: flex;
       flex-direction: column;
-      background-color: aliceblue;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    main {
-      flex: 1; /* This allows main to grow and push the footer down */
+      min-height: 100vh;
     }
 
     header {
       background-color: green;
       color: white;
-      padding: 30px 20px;
+      padding: 40px;
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
     }
 
-    h1 {
-      font-size: 36px;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 24px;
       color: white;
+      white-space: nowrap;
+      overflow: hidden;
+      
+      min-width: 250px;
+      height: 30px;
     }
 
-    
-/* Hamburger */
-.hamburger {
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  display: none;
-  user-select: none;
-  background: none;
-  border: none;
-  padding:30px;
-}
+    .hamburger {
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      display: none;
+      background: none;
+      border: none;
+      padding: 10px;
+    }
 
-/* Navbar (Desktop Default) */
-.navbar {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.3s;
-}
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
 
-.navbar a:hover {
-  background-color: darkgreen;
-  border-radius: 5px;
-  transform: scale(1.05);
-}
-.logo {
-  font-size: 24px;
-  color: white;
-  background-color: green;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid white;
-}
+    .navbar a:hover {
+      background-color: darkgreen;
+      border-radius: 5px;
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: green;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .navbar.active {
+        display: flex;
+      }
+
+      .navbar a {
+        padding: 10px;
+        text-align: center;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
+
+    main {
+      flex: 1;
+      padding-top: 100px; /* Push content below fixed header */
+    }
+
+    h2 {
+      font-size: 36px;
+      color: green;
+    }
+
+    h2:hover {
+      color: darkgreen;
+    }
+
+    p {
+      color: green;
+      padding: 10px;
+      font-size: 16px;
+      margin: 0 auto;
+    }
+
+    .projects {
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    .data {
+      color: green;
+      padding: 0px;
+    }
 
     section {
       display: flex;
@@ -85,32 +151,7 @@
       align-items: center;
       padding: 100px 0 0 0;
     }
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-    background-color: green;
-  }
 
-  .navbar {
-    display: none;
-    flex-direction: column;
-    background-color: green;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    z-index: 999;
-  }
-
-  .navbar.active {
-    display: flex;
-  }
-
-  .navbar a {
-    padding: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-  }
-}
 
     table {
       padding: 5px;
