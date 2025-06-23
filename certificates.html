@@ -27,11 +27,10 @@
     header {
       background-color: green;
       color: white;
-      padding: 30px;
+      padding: 40px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      align-items:center;
     }
 
     h1 {
@@ -39,23 +38,8 @@
       color: white;
     }
 
-    header {
-  background-color: green;
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-}
 
-.logo {
-  font-size: 24px;
-  color: white;
-  margin: 0;
-}
 
-/* Hamburger */
 .hamburger {
   font-size: 28px;
   color: white;
@@ -67,7 +51,7 @@
   padding:30px;
 }
 
-/* Navbar (Desktop Default) */
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -95,12 +79,45 @@
   overflow: hidden;
   border-right: 2px solid white;
 }
+ @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
 
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background-color: green;
+    width: 100%;
+    padding: 10px 0;
+  }
 
-    h2 {
-      font-size: 36px;
-      color: green;
-    }
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 10px;
+    text-align: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+h2:hover{
+  color: darkgreen;
+}
+
 
     .certificates {
       background-color: white;
@@ -130,7 +147,7 @@
 
     .certificate-link:hover {
       background-color: darkgreen;
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
 
     footer {
@@ -146,7 +163,7 @@
 <body>
   <main>
     <header>
-     <div class="container">
+      <div class="container">
       <h1 class="logo"  id="typewriter"></h1>
       <div class="hamburger" onclick="toggleMenu()">☰</div>
     </div>
@@ -175,8 +192,8 @@
   <footer>
     <b>&copy; 2024 MyWebsite. All rights reserved.</b>
   </footer>
- <script>
-    const text = "👩‍🎓Certificates👩‍🎓";
+  <script>
+    const text = "👩‍🎓 Certificates👩‍🎓";
     let index = 0;
 
   function typeWriter() {
@@ -194,6 +211,6 @@
     nav.classList.toggle("active");
   }
 
-</script> 
+</script>
 </body>
 </html>
