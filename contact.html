@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-<style>
+  <style>
     * {
       box-sizing: border-box;
     }
@@ -77,138 +76,149 @@
       transform: scale(1.05);
     }
 
-    
+   
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      width: 90%;
+      border: 2px solid green;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 128, 0, 0.1);
+    }
+
     h2 {
       font-size: 36px;
       color: green;
     }
-   #about{
-     margin:0;
-     width:100%;
-   }
-    p {
-      color: green;
-      padding: 10px;
-      font-size: 16px;
-      margin: 0 auto;
-      
+
+   
+    #submit {
+      background-color: green;
+      color: white;
+      padding: 15px 30px;
+      margin-top: 20px;
+      text-decoration: none;
+      border-radius: 25px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition-duration: 0.3s;
     }
 
-    img {
-      border-radius: 50%;
-      margin: 10px 0;
+    #submit:hover {
+      background-color: rgb(74, 121, 4);
     }
 
     footer {
       background-color: green;
       color: white;
       padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
+      margin-top: auto;
     }
+
+    /* RESPONSIVE MENU */
     @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+      .hamburger {
+        display: block;
+      }
 
-  .navbar {
-    display: none;
-    flex-direction: column;
-    background-color: green;
-    width: 100%;
-    padding: 10px 0;
-  }
+      .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: green;
+        width: 100%;
+        padding: 10px 0;
+      }
 
-  .navbar.active {
-    display: flex;
-  }
+      .navbar.active {
+        display: flex;
+      }
 
-  .navbar a {
-    padding: 10px;
-    text-align: center;
-  }
+      .navbar a {
+        padding: 10px;
+        text-align: center;
+      }
 
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-  .container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-}
-h2:hover{
-  color: darkgreen;
-}
-.hover-move{
-  transition: transform 0.3s ease-in-out;
-}
-.hover-move:hover{
-  transform: translateY(-10px);
-}
-p:hover{
-  color: darkgreen;
-}
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
-<header>
-<div class="container">
-<h1 class="logo" id="typewriter"></h1>
-<div class="hamburger" onclick="toggleMenu()">☰</div>
-</div>
-<nav class="navbar" id="navbar">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="projects.html">Projects</a>
-<a href="skills.html">Skills</a>
-<a href="contact.html">Contact</a>
-</nav>
-</header>
+  <header>
+    <div class="container">
+      <h1 class="logo" id="typewriter"></h1>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+    <nav class="navbar" id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<main>
+  <main>
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <form action="https://formsubmit.co/sharmilainkoolu@gmail.com" method="POST">
+        <div>
+          <label>Name: <input type="text" placeholder="Your name" required></label>
+        </div>
+        <div style="margin-top: 5px;">
+          <label>Email: <input type="email" name="email" placeholder="Your Email" required></label>
+        </div>
+        <label for="messageBox" style="display:block; font-weight:bold; margin-bottom:5px;">Message:</label>
+        <textarea id="messageBox" name="message" placeholder="Your message" rows="4" cols="40" style="display: block; padding: 8px; border: 1px solid green; border-radius: 5px;"></textarea>
 
-<section id="About">
-<h2>Inkoolu Sharmila</h2>
-<img class="hover-move" alt="My Profile Photo" height="200px" src="profile1.jpg" width="200px"/>
-<p>
-        I am an engineering student studying in <em>Avanthi's St. Theressa Institute of Engineering and Technology</em>.
-      </p>
-<p>
-        I am a passionate and dedicated Computer Science student with a strong foundation in programming, web development, and problem-solving. I enjoy turning ideas into reality using code and have <strong>hands-on experience with technologies like Python, HTML, CSS, and JavaScript.</strong> I have completed a Python development internship, built several personal projects, and continually seek opportunities to grow and learn.
-      </p>
-<p>
-        With a strong academic background and excellent communication skills, I aim to contribute meaningfully to a dynamic team while continuing to enhance my technical abilities. I have completed my 10th with 96 percent. Now, I am pursuing BTech specializing in <strong>Computer Science Engineering</strong> with a <b>CGPA: 8.27</b>.
-      </p>
-</section>
-</main>
+        <div style="margin-top: 10px;">
+          <label><input type="radio" name="gender" value="female" required> Female</label>
+          <label><input type="radio" name="gender" value="male"> Male</label>
+          <label><input type="radio" name="gender" value="other"> Other</label>
+        </div>
 
+        <input type="submit" id="submit" value="Submit">
+      </form>
+    </section>
+  </main>
 
+  <footer>
+    <b>&copy; 2024 MyWebsite. All rights reserved.</b>
+  </footer>
 
-<footer>
-<b>© 2024 MyWebsite. All rights reserved.</b>
-</footer>
+  <script>
+    const text = "👩‍🎓 Contact👩‍🎓";
+    let index = 0;
 
-<script>
-  const text = "👩‍🎓 About👩‍🎓";
-  let index = 0;
-  function typeWriter() {
-    if (index < text.length) {
-      document.getElementById("typewriter").textContent += text.charAt(index);
-      index++;
-      setTimeout(typeWriter, 75);
+    function typeWriter() {
+      if (index < text.length) {
+        document.getElementById("typewriter").textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 75);
+      }
     }
-  }
-  function toggleMenu() {
-    const nav = document.getElementById("navbar");
-    nav.classList.toggle("active");
-  }
-  window.onload = typeWriter;
-</script>
+
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
